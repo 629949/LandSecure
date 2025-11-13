@@ -27,6 +27,10 @@
             <Setter Property="Width" Value="200" />
             <Setter Property="Height" Value="300" />
             <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
 
 
 
@@ -35,27 +39,49 @@
 
         <!--  style for the buttons  -->
         <Style x:Key="Buttons" TargetType="Button">
-            <Setter Property="Width" Value="50" />
-            <Setter Property="Height" Value="20" />
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Height" Value="50" />
             <Setter Property="HorizontalAlignment" Value="Center" />
             <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="Background" Value="LightGreen" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="BorderBrush" Value="DarkGreen" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="CornerRadius" Value="5" />
         </Style>
 
     </Page.Resources>
 
-    <Grid Background="White">
+    <Grid Background="DimGray">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="200*"/>
+            <RowDefinition Height="0*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
 
-        <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="2" Grid.RowSpan="2">
 
 
             <StackPanel>
                 <StackPanel>
                     <Image
-                    Height="300"
+                    Height="500"
                     Source="/Assets/landnew.jpeg"
                     Stretch="Fill" />
-                    <TextBlock Text="Get rid of the hustle of waiting in line" />
+                    <TextBlock Text="Get rid of the hustle of waiting in line"
+                               FontSize="30"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               FontStretch="Expanded"
+                               FontWeight="Bold"
+                               />
 
 
                 </StackPanel>
@@ -66,21 +92,42 @@
                 VerticalAlignment="Center"
                 Orientation="Horizontal">
                     <StackPanel Style="{StaticResource Cards}">
-                        <TextBlock Text="Verifying Documents" />
+                        <TextBlock Text="Verifying Documents" 
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Foreground="Green"
+                                   FontSize="20"
+                                   />
                         <TextBlock Style="{StaticResource Paragragh}" Text="Easily confirm land authenticity by scanning                                 a QR code or barcode linked to verified records.                                  Instantly check ownership details, location data,                                  and legitimacy to avoid fraud or fake documents" />
-                        <Button Content="See more" Style="{StaticResource Buttons}" />
+                        <Button Content="See more" Style="{StaticResource Buttons}" Click="verifybtn" />
                     </StackPanel>
 
                     <StackPanel Style="{StaticResource Cards}">
-                        <TextBlock Text="Looking For Land" />
-                        <TextBlock Text="Search and explore available plots based on your preferences — location, size, or price.                                  Our system connects you to verified listings so you can find                                  genuine land opportunities fast." />
-                        <Button Content="See more" Style="{StaticResource Buttons}" />
+                        <TextBlock Text="Looking For Land" 
+                                    VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                     Foreground="Green"
+                                     FontSize="20"
+                                   />
+                        <TextBlock Text="Search and explore available plots based on your preferences — location, size, or price.                                  Our system connects you to verified listings so you can find                                  genuine land opportunities fast." 
+                                   Style="{StaticResource Paragragh}" 
+                                   />
+                        <Button Content="See more"
+                                Style="{StaticResource Buttons}" />
                     </StackPanel>
 
 
                     <StackPanel Style="{StaticResource Cards}">
-                        <TextBlock Text="Transfer of titles" />
-                        <TextBlock Text="Simplify the transfer of land ownership through a secure digital process.                                   We handle verification, document validation,                                  and owner updates — making land transfers smooth, transparent, and traceable." />
+                        <TextBlock Text="Transfer of titles" 
+                                    VerticalAlignment="Center"
+                                     HorizontalAlignment="Center"
+                                     Foreground="Green"
+                                     FontSize="20"
+                                   />
+                        <TextBlock 
+                            Text="Simplify the transfer of land ownership through a secure digital process.                                   We handle verification, document validation,                                  and owner updates — making land transfers smooth, transparent, and traceable." 
+                            Style="{StaticResource Paragragh}" 
+                            />
 
                         <Button Content="See more" Style="{StaticResource Buttons}" />
                     </StackPanel>
@@ -92,11 +139,20 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Orientation="Horizontal">
-                    <Image Source="/Assets/lawyer.jpeg" />
+                    <Image Source="/Assets/lawyer.jpeg"
+                           Stretch="Fill"
+                           Height="300"
+                           />
 
                     <StackPanel>
-                        <TextBlock Text="Secure Your Land with Confidence" />
-                        <TextBlock Style="{StaticResource Paragragh}" Text="Connect with verified property lawyers who specialize in land verification,                                 ownership transfer, and dispute resolution.                                Our network ensures you get trusted legal guidance for every step — from reviewing documents to finalizing contracts.                                ✅ What You Can Do: Get matched with licensed land lawyers near you Request document review or legal advice Schedule                                 consultations directly through the platform We make sure you’re backed by professionals who understand land law —                                so every deal is secure, compliant, and fully transparent." />
+                        <TextBlock Text="Secure Your Land with Confidence"
+                                    VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"
+                                      Foreground="Green"
+                                      FontSize="30"
+                                   />
+                        <TextBlock Style="{StaticResource Paragragh}" 
+                                   Text="Connect with verified property lawyers who specialize in land verification,                                 ownership transfer, and dispute resolution.                                Our network ensures you get trusted legal guidance for every step — from reviewing documents to finalizing contracts.                                ✅ What You Can Do: Get matched with licensed land lawyers near you Request document review or legal advice Schedule                                 consultations directly through the platform We make sure you’re backed by professionals who understand land law —                                so every deal is secure, compliant, and fully transparent." />
 
                         <Button Content="See more" Style="{StaticResource Buttons}" />
                     </StackPanel>
