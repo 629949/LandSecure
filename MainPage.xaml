@@ -8,7 +8,107 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Page.Resources>
+        <!--  style for the cards  -->
+        <Style x:Key="Cards" TargetType="StackPanel">
+            <Setter Property="Background" Value="Gray" />
+            <Setter Property="Width" Value="400" />
+            <Setter Property="Height" Value="500" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="Orientation" Value="Vertical" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="10" />
+        </Style>
+
+        <!--  styles for the text block  -->
+
+        <Style x:Key="Paragragh" TargetType="TextBlock">
+            <Setter Property="Width" Value="200" />
+            <Setter Property="Height" Value="300" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+
+
+
+        </Style>
+
+
+        <!--  style for the buttons  -->
+        <Style x:Key="Buttons" TargetType="Button">
+            <Setter Property="Width" Value="50" />
+            <Setter Property="Height" Value="20" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+
+    </Page.Resources>
+
     <Grid>
 
+
+        <StackPanel>
+            <StackPanel>
+                <Image
+                    Height="300"
+                    Source="/Assets/landnew.jpeg"
+                    Stretch="Fill" />
+                <TextBlock Text="Get rid of the hustle of waiting in line" />
+
+
+            </StackPanel>
+
+
+            <StackPanel
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Orientation="Horizontal">
+                <StackPanel Style="{StaticResource Cards}">
+                    <TextBlock Text="Verifying Documents" />
+                    <TextBlock Style="{StaticResource Paragragh}" Text="Easily confirm land authenticity by scanning                                 a QR code or barcode linked to verified records.                                  Instantly check ownership details, location data,                                  and legitimacy to avoid fraud or fake documents" />
+                    <Button Content="See more" Style="{StaticResource Buttons}" />
+                </StackPanel>
+
+                <StackPanel Style="{StaticResource Cards}">
+                    <TextBlock Text="Looking For Land" />
+                    <TextBlock Text="Search and explore available plots based on your preferences — location, size, or price.                                  Our system connects you to verified listings so you can find                                  genuine land opportunities fast." />
+                    <Button Content="See more" Style="{StaticResource Buttons}" />
+                </StackPanel>
+
+
+                <StackPanel Style="{StaticResource Cards}">
+                    <TextBlock Text="Transfer of titles" />
+                    <TextBlock Text="Simplify the transfer of land ownership through a secure digital process.                                   We handle verification, document validation,                                  and owner updates — making land transfers smooth, transparent, and traceable." />
+
+                    <Button Content="See more" Style="{StaticResource Buttons}" />
+                </StackPanel>
+
+            </StackPanel>
+
+
+            <StackPanel
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Orientation="Horizontal">
+                <Image Source="/Assets/lawyer.jpeg" />
+
+                <StackPanel>
+                    <TextBlock Text="Secure Your Land with Confidence" />
+                    <TextBlock Style="{StaticResource Paragragh}" Text="Connect with verified property lawyers who specialize in land verification,                                 ownership transfer, and dispute resolution.                                Our network ensures you get trusted legal guidance for every step — from reviewing documents to finalizing contracts.                                ✅ What You Can Do: Get matched with licensed land lawyers near you Request document review or legal advice Schedule                                 consultations directly through the platform We make sure you’re backed by professionals who understand land law —                                so every deal is secure, compliant, and fully transparent." />
+
+                    <Button Content="See more" Style="{StaticResource Buttons}" />
+                </StackPanel>
+
+            </StackPanel>
+
+
+            <!--  footer  -->
+            <StackPanel
+                Margin="0,20,0,20"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom">
+                <TextBlock Text="LandSecure © 2024. All rights reserved." />
+
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>
