@@ -20,7 +20,8 @@
         <NavigationView x:Name="NavView"
                     IsBackButtonVisible="Collapsed"
                     ItemInvoked="NavView_ItemInvoked"
-                    Background="Transparent"
+                    Background="White"
+                        Foreground="Black"
                         >
 
             <NavigationView.MenuItems

@@ -148,6 +148,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\fingerprint.svg" />
     <Content Include="Assets\landnew.jpeg" />
     <Content Include="Assets\landunsplash.jpg" />
     <Content Include="Assets\lawyer.jpeg" />

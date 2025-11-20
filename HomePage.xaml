@@ -22,7 +22,7 @@
             <Setter Property="Padding" Value="10" />
             <Setter Property="BorderBrush" Value="Gray" />
             <Setter Property="BorderThickness" Value="2" />
-            
+
 
 
 
@@ -84,9 +84,7 @@
             VerticalScrollBarVisibility="Auto">
 
 
-            <StackPanel 
-                
-                >
+            <StackPanel>
                 <StackPanel>
 
                     <TextBlock
@@ -103,7 +101,6 @@
 
 
                 <StackPanel
-                   
                     Height="950"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"

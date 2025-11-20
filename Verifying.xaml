@@ -9,7 +9,10 @@
     mc:Ignorable="d">
 
     <ScrollViewer>
-        <Grid Padding="40">
+        <Grid Padding="40"
+              Background="White"
+              
+              >
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -129,7 +132,7 @@
                     <Button
                         Margin="0,0,0,10"
                         HorizontalAlignment="Left"
-                        Content="📎 Upload Title Deed" />
+                        Content=" Upload Title Deed" />
                     <TextBlock
                         x:Name="TitleDeedStatus"
                         Margin="0,0,0,20"
@@ -139,12 +142,27 @@
                     <Button
                         Margin="0,0,0,10"
                         HorizontalAlignment="Left"
-                        Content="📎 Upload ID Copy" />
+                        Content="Upload ID Copy" />
                     <TextBlock
                         x:Name="IdCopyStatus"
                         Margin="0,0,0,20"
                         Foreground="Gray"
                         Text="No file selected" />
+
+                    <Button
+                        Width="60"
+                        Height="60"
+                        Margin="0,0,0,10"
+                        HorizontalAlignment="Left"
+                        CornerRadius="5">
+                        <StackPanel Width="60" Height="60">
+                            <Image Source="/Assets/fingerprint.svg" Stretch="UniformToFill" />
+                        </StackPanel>
+                    </Button>
+                    <TextBlock
+                        Margin="0,0,0,20"
+                        Foreground="Gray"
+                        Text="Scan Fingerprint" />
 
                     <TextBox
                         Height="100"
@@ -167,12 +185,14 @@
                     x:Name="BackBtn"
                     Width="100"
                     Margin="0,0,10,0"
+                    Click="backbtn"
                     Content="Back"
-                    Visibility="Collapsed" Click="backbtn" />
+                    Visibility="Collapsed" />
                 <Button
                     x:Name="NextBtn"
                     Width="100"
-                    Content="Next" Click="nextbtn" />
+                    Click="nextbtn"
+                    Content="Next" />
             </StackPanel>
 
         </Grid>
