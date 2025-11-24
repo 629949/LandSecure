@@ -200,13 +200,11 @@ namespace LandSecure
 
         private async void SubmitToDatabase()
         {
-            // TODO: Replace with your actual database logic
-            // Example using SQLite, Entity Framework, or Web API
+          
 
             try
             {
-                // Simulate database save
-                // await DatabaseService.SaveVerificationAsync(formData);
+                
 
                 ContentDialog successDialog = new ContentDialog
                 {
@@ -233,6 +231,13 @@ namespace LandSecure
 
         private void PropertyIdBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+
+        }
+
+     
+        private void clearform(object sender, RoutedEventArgs e)
+        {
+           
 
         }
     }

@@ -29,7 +29,7 @@
 
             <TextBlock
                 Grid.Row="0"
-                Margin="0,0,0,20"
+                Margin="100,0,0,20"
                 FontSize="32"
                 FontWeight="Bold"
                 Width="800"
@@ -43,17 +43,20 @@
                          CornerRadius="5"
                          Width="800"
                          Height="100"
+                        Background="#3338A0"
                         
                         
                         >
                 <TextBlock
                     x:Name="StepIndicator"
-                    Margin="0,0,0,10"
+                    Margin="100,20,100,10"
                     FontSize="16"
+                    Foreground="White"
                     Text="Step 1 of 3: Property Details" />
                 <ProgressBar
                     x:Name="ProgressBar"
                     Height="10"
+                      Margin="100,0,100,10"
                     Maximum="100"
                     Value="33" />
             </StackPanel>
@@ -67,11 +70,31 @@
                             CornerRadius="5"
                             Width="800"
                             >
-                    <TextBlock
-                        Margin="0,0,0,20"
-                        FontSize="24"
-                        FontWeight="Bold"
-                        Text="Property Identification" />
+                    <StackPanel
+                        Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Width="800"
+                        
+                        
+                        >
+                        <TextBlock
+                            Margin="100,20,0,20"
+                            FontSize="24"
+                            FontWeight="Bold"
+                            Text="Property Identification" />
+                        
+                        
+                        
+                        <Button 
+                             Margin="300,20,0,20"
+                            Content="clear"
+                            HorizontalAlignment="Center"
+                            Foreground="Black" Click="clearform"
+                            />
+                    </StackPanel>
+                    
+                    
 
                     <TextBox
                         x:Name="PropertyIdBox"
@@ -128,7 +151,12 @@
                 </StackPanel>
 
                 <!--  Step 2: Owner Details  -->
-                <StackPanel x:Name="Step2Panel" Visibility="Collapsed">
+                <StackPanel x:Name="Step2Panel"
+                            Visibility="Collapsed"
+                             BorderBrush="Black"
+                             BorderThickness="2"
+                             CornerRadius="5"
+                             Width="800">
                     <TextBlock
                         Margin="0,0,0,20"
                         FontSize="24"
@@ -153,6 +181,12 @@
                         Margin="0,0,0,15"
                         Header="National ID*"
                         PlaceholderText="Enter ID number"
+                         Width="600"
+                         CornerRadius="5"
+                         Background="White"
+                         PlaceholderForeground="Black"
+                         BorderBrush="Black"
+                        Foreground="Black"
                         Text="{Binding NationalId, Mode=TwoWay}" />
 
                     <TextBox
@@ -174,18 +208,23 @@
                         Header="Email"
                         PlaceholderText="owner@example.com"
                          Width="600"
- CornerRadius="5"
- Background="White"
- PlaceholderForeground="Black"
- BorderBrush="Black"
-Foreground="Black"
+                         CornerRadius="5"
+                         Background="White"
+                         PlaceholderForeground="Black"
+                         BorderBrush="Black"
+                        Foreground="Black"
                         Text="{Binding Email, Mode=TwoWay}" 
                         
                         />
                 </StackPanel>
 
                 <!--  Step 3: Document Upload  -->
-                <StackPanel x:Name="Step3Panel" Visibility="Collapsed">
+                <StackPanel x:Name="Step3Panel" 
+                            Visibility="Collapsed"
+                             BorderBrush="Black"
+                             BorderThickness="2"
+                             CornerRadius="5"
+                             Width="800">
                     <TextBlock
                         Margin="0,0,0,20"
                         FontSize="24"
@@ -231,13 +270,20 @@ Foreground="Black"
                         Text="Scan Fingerprint" />
 
                     <TextBox
-                        Height="100"
+                        Height="400"
                         Margin="0,0,0,15"
                         AcceptsReturn="True"
                         Header="Additional Notes"
                         PlaceholderText="Any additional information..."
                         Text="{Binding Notes, Mode=TwoWay}"
-                        TextWrapping="Wrap" />
+                        TextWrapping="Wrap" 
+                        Background="White"
+                        BorderBrush="Gray"
+                        BorderThickness="1"
+                        Width="600"
+                        CornerRadius="5"
+                        
+                        />
                 </StackPanel>
             </Grid>
 
@@ -254,18 +300,22 @@ Foreground="Black"
                     Click="backbtn"
                     Content="Back"
                     Visibility="Collapsed" 
-                    BorderBrush="Black"
+                    BorderBrush="#3338A0"
                     BorderThickness="2"
-                    
+                    Foreground="White"
+                    CornerRadius="2"
+                    Background="#3338A0"
                     />
                 <Button
                     x:Name="NextBtn"
                     Width="100"
                     Click="nextbtn"
                     Content="Next" 
-                      BorderBrush="Black"
+                     BorderBrush="#3338A0"
                      BorderThickness="2"
-                    Foreground="Black"
+                     Foreground="White"
+                     CornerRadius="2"
+                     Background="#3338A0"
                     
                     />
             </StackPanel>
