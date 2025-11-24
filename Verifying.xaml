@@ -10,10 +10,13 @@
 
     <ScrollViewer
         Foreground="Black"
+        Background="#F8FAFC"
+        
+    
         >
         <Grid Padding="40"
               Background="White"
-              
+              Width="900"
               >
 
             <Grid.RowDefinitions>
@@ -28,6 +31,8 @@
                 Margin="0,0,0,20"
                 FontSize="32"
                 FontWeight="Bold"
+                Width="800"
+                
                 Text="Document Verification" />
 
             <!--  Progress Bar  -->
@@ -37,6 +42,7 @@
                          CornerRadius="5"
                          Width="800"
                          Height="100"
+                        
                         
                         >
                 <TextBlock
@@ -78,6 +84,7 @@
                         Background="White"
                         PlaceholderForeground="Black"
                         BorderBrush="Black"
+                        Foreground="Black"
                         />
 
                     <TextBox
@@ -91,6 +98,7 @@
                           Background="White"
                           PlaceholderForeground="Black"
                           BorderBrush="Black"
+                         Foreground="Black"
                         />
 
                     <ComboBox
@@ -114,6 +122,7 @@
                           Background="White"
                           PlaceholderForeground="Black"
                           BorderBrush="Black"
+                            Foreground="Black"
                         Text="{Binding Size, Mode=TwoWay}" />
                 </StackPanel>
 
@@ -222,12 +231,21 @@
                     Margin="0,0,10,0"
                     Click="backbtn"
                     Content="Back"
-                    Visibility="Collapsed" />
+                    Visibility="Collapsed" 
+                    BorderBrush="Black"
+                    BorderThickness="2"
+                    
+                    />
                 <Button
                     x:Name="NextBtn"
                     Width="100"
                     Click="nextbtn"
-                    Content="Next" />
+                    Content="Next" 
+                      BorderBrush="Black"
+                     BorderThickness="2"
+                    Foreground="Black"
+                    
+                    />
             </StackPanel>
 
         </Grid>

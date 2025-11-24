@@ -90,12 +90,11 @@ namespace LandSecure
 
         private void UpdateStepVisibility()
         {
-            // Hide all steps
+           
             Step1Panel.Visibility = Visibility.Collapsed;
             Step2Panel.Visibility = Visibility.Collapsed;
             Step3Panel.Visibility = Visibility.Collapsed;
 
-            // Show current step
             switch (currentStep)
             {
                 case 1:
