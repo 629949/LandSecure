@@ -231,5 +231,10 @@ namespace LandSecure
                 await errorDialog.ShowAsync();
             }
         }
+
+        private void PropertyIdBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

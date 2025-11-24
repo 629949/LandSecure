@@ -8,7 +8,9 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
 
-    <ScrollViewer>
+    <ScrollViewer
+        Foreground="Black"
+        >
         <Grid Padding="40"
               Background="White"
               
@@ -29,7 +31,14 @@
                 Text="Document Verification" />
 
             <!--  Progress Bar  -->
-            <StackPanel Grid.Row="1" Margin="0,0,0,30">
+            <StackPanel Grid.Row="1" Margin="0,0,0,30"
+                         BorderBrush="Black"
+                         BorderThickness="2"
+                         CornerRadius="5"
+                         Width="800"
+                         Height="100"
+                        
+                        >
                 <TextBlock
                     x:Name="StepIndicator"
                     Margin="0,0,0,10"
@@ -45,7 +54,12 @@
             <Grid Grid.Row="2">
 
                 <!--  Step 1: Property Details  -->
-                <StackPanel x:Name="Step1Panel" Visibility="Visible">
+                <StackPanel x:Name="Step1Panel" Visibility="Visible"
+                            BorderBrush="Black"
+                            BorderThickness="2"
+                            CornerRadius="5"
+                            Width="800"
+                            >
                     <TextBlock
                         Margin="0,0,0,20"
                         FontSize="24"
@@ -57,18 +71,34 @@
                         Margin="0,0,0,15"
                         Header="Property ID*"
                         PlaceholderText="Enter property ID"
-                        Text="{Binding PropertyId, Mode=TwoWay}" />
+                        Text="{Binding PropertyId, Mode=TwoWay}" 
+                        TextChanged="PropertyIdBox_TextChanged" 
+                        Width="600"
+                        CornerRadius="5"
+                        Background="White"
+                        PlaceholderForeground="Black"
+                        BorderBrush="Black"
+                        />
 
                     <TextBox
                         x:Name="LocationBox"
                         Margin="0,0,0,15"
                         Header="Location*"
                         PlaceholderText="Enter location"
-                        Text="{Binding Location, Mode=TwoWay}" />
+                        Text="{Binding Location, Mode=TwoWay}"
+                          Width="600"
+                          CornerRadius="5"
+                          Background="White"
+                          PlaceholderForeground="Black"
+                          BorderBrush="Black"
+                        />
 
                     <ComboBox
-                        Margin="0,0,0,15"
+                        Margin="100,0,0,15"
                         Header="Property Type*"
+                        Background="White"
+                        BorderBrush="Black"
+                        Foreground="Black"
                         SelectedItem="{Binding PropertyType, Mode=TwoWay}">
                         <ComboBoxItem Content="Residential" />
                         <ComboBoxItem Content="Commercial" />
@@ -79,6 +109,11 @@
                         Margin="0,0,0,15"
                         Header="Size (Acres)"
                         PlaceholderText="Enter size"
+                          Width="600"
+                          CornerRadius="5"
+                          Background="White"
+                          PlaceholderForeground="Black"
+                          BorderBrush="Black"
                         Text="{Binding Size, Mode=TwoWay}" />
                 </StackPanel>
 
