@@ -42,10 +42,11 @@
                         >
                 <TextBlock
                     x:Name="StepIndicator"
-                    Margin="0,0,0,10"
+                    Margin="100,20,0,10"
                     FontSize="16"
                     Foreground="White"
                     Text="Step 1 of 4: Property Details" />
+                
                 <ProgressBar
                    x:Name="ProgressBar"
                     Height="10"
@@ -70,18 +71,15 @@
                             VerticalAlignment="Center"
                             HorizontalAlignment="Center"
                             Width="800"
-    
-    
                             >
-                                                <TextBlock
+                                                
+                        <TextBlock
                                 Margin="100,20,0,20"
                                 FontSize="24"
                                 FontWeight="Bold"
                                 Text="Property Identification" />
 
-
-
-                                                <Button 
+                        <Button 
                                  Margin="300,20,0,20"
                                 Content="clear"
                                 HorizontalAlignment="Center"
