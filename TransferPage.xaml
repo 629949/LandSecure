@@ -159,30 +159,56 @@
                     <TextBox
                         x:Name="OwnerNameBox"
                         Margin="0,0,0,15"
-                        Header="Owner Name*"
-                        PlaceholderText="Full legal name"
+                         Header="Owner Name*"
+                         PlaceholderText="Full legal name"
+                          Width="600"
+                          CornerRadius="5"
+                          Background="White"
+                          PlaceholderForeground="Black"
+                          BorderBrush="Black"
+                         Foreground="Black"
                         Text="{Binding OwnerName, Mode=TwoWay}" />
 
                     <TextBox
                         x:Name="identification"
-                        Margin="0,0,0,15"
-                        Header="National ID*"
-                        PlaceholderText="Enter ID number"
+                       Margin="0,0,0,15"
+                         Header="National ID*"
+                         PlaceholderText="Enter ID number"
+                          Width="600"
+                          CornerRadius="5"
+                          Background="White"
+                          PlaceholderForeground="Black"
+                          BorderBrush="Black"
+                         Foreground="Black"
                         Text="{Binding NationalId, Mode=TwoWay}" />
 
-                    <TextBox
-                        x:Name="contactinfo"
-                        Margin="0,0,0,15"
-                        Header="Phone Number*"
-                        PlaceholderText="+256 XXX XXX XXX"
-                        Text="{Binding Contact, Mode=TwoWay}" />
+                                        <TextBox
+                         x:Name="contactinfo"
+                         Margin="0,0,0,15"
+                         Header="Phone Number*"
+                         PlaceholderText="+256 XXX XXX XXX"
+                          Width="600"
+                                  CornerRadius="5"
+                                  Background="White"
+                                  PlaceholderForeground="Black"
+                                  BorderBrush="Black"
+                                 Foreground="Black"
+                         Text="{Binding Contact, Mode=TwoWay}" />
 
                     <TextBox
-                        x:Name="emailaddress"
-                        Margin="0,0,0,15"
-                        Header="Email"
-                        PlaceholderText="owner@example.com"
-                        Text="{Binding Email, Mode=TwoWay}" />
+         x:Name="emailaddress"
+         Margin="0,0,0,15"
+         Header="Email"
+         PlaceholderText="owner@example.com"
+          Width="600"
+          CornerRadius="5"
+          Background="White"
+          PlaceholderForeground="Black"
+          BorderBrush="Black"
+         Foreground="Black"
+         Text="{Binding Email, Mode=TwoWay}" 
+         
+         />
                 </StackPanel>
 
 
