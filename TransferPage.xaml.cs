@@ -241,5 +241,10 @@ namespace LandSecure
                 await errorDialog.ShowAsync();
             }
         }
+
+        private void clearform(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

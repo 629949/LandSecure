@@ -2,51 +2,51 @@
     x:Class="LandSecure.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:LandSecure"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:LandSecure"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
 
     <Page.Resources>
         <Style x:Key="nav" TargetType="NavigationView">
-            <Setter Property="Margin" Value="10,0,0,0"/>
+            <Setter Property="Margin" Value="10,0,0,0" />
         </Style>
     </Page.Resources>
-    
+
 
     <Grid>
 
-        <NavigationView x:Name="NavView"
-                    IsBackButtonVisible="Collapsed"
-                    ItemInvoked="NavView_ItemInvoked"
-                    Background="White"
-                        Foreground="Black"
-                        >
+        <NavigationView
+            x:Name="NavView"
+            Background="White"
+            Foreground="Black"
+            IsBackButtonVisible="Collapsed"
+            ItemInvoked="NavView_ItemInvoked">
 
-            <NavigationView.MenuItems
-                >
+            <NavigationView.MenuItems>
 
-                <StackPanel 
-                    Orientation="Horizontal"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    Padding="10"
-                    Margin="20, 0 ,0 ,0"
+                <StackPanel
                     Width="200"
                     Height="50"
-                    >
-                    <SymbolIcon Symbol="OtherUser"/>
-                    <TextBlock Text="Welcome User"
-                               FontSize="20"
-                               Height="30"
-                               Margin="3,0,0,0"
-                               />
+                    Margin="20,0,0,0"
+                    Padding="10"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+                    <SymbolIcon Symbol="OtherUser" />
+                    <TextBlock
+                        Height="30"
+                        Margin="3,0,0,0"
+                        FontSize="20"
+                        Text="Welcome User" />
                 </StackPanel>
 
-               
-                <NavigationViewItem Content="Home" Tag="HomePage" IsSelected="True"
-                                    >
+
+                <NavigationViewItem
+                    Content="Home"
+                    IsSelected="True"
+                    Tag="HomePage">
                     <NavigationViewItem.Icon>
                         <SymbolIcon Symbol="Home" />
                     </NavigationViewItem.Icon>
@@ -70,7 +70,7 @@
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
 
-                <!-- Move the "Lawyers" item here, since FooterMenuItems is not supported in WinUI/UWP XAML -->
+                <!--  Move the "Lawyers" item here, since FooterMenuItems is not supported in WinUI/UWP XAML  -->
                 <NavigationViewItem Content="Lawyers" Tag="LawyersPage">
                     <NavigationViewItem.Icon>
                         <SymbolIcon Symbol="Contact" />

@@ -7,9 +7,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
-    <ScrollViewer>
+    <ScrollViewer
+         Foreground="Black"
+ Background="#F8FAFC"
+        >
         <Grid Padding="40"
-              Background="White">
+              Background="White"
+              Width="900"
+              >
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -26,15 +31,25 @@
                 Text="Transfer of Title" />
 
             <!--  Progress Bar  -->
-            <StackPanel Grid.Row="1" Margin="0,0,0,30">
+            <StackPanel Grid.Row="1"
+                        Margin="0,0,0,30"
+                         BorderBrush="Black"
+                         BorderThickness="2"
+                         CornerRadius="5"
+                         Width="800"
+                         Height="100"
+                        Background="#3338A0"
+                        >
                 <TextBlock
                     x:Name="StepIndicator"
                     Margin="0,0,0,10"
                     FontSize="16"
+                    Foreground="White"
                     Text="Step 1 of 4: Property Details" />
                 <ProgressBar
-                    x:Name="ProgressBar"
+                   x:Name="ProgressBar"
                     Height="10"
+                      Margin="100,0,100,10"
                     Maximum="100"
                     Value="25" />
             </StackPanel>
@@ -42,30 +57,72 @@
             <Grid Grid.Row="2">
 
                 <!--  Step 1: Property Details  -->
-                <StackPanel x:Name="Step1Panel" Visibility="Visible">
-                    <TextBlock
-                        Margin="0,0,0,20"
-                        FontSize="24"
-                        FontWeight="Bold"
-                        Text="Property Identification" />
+                <StackPanel x:Name="Step1Panel" 
+                            Visibility="Visible"
+                            BorderBrush="Black"
+                            BorderThickness="2"
+                            CornerRadius="5"
+                            Width="800"
+                            >
+                    
+                                            <StackPanel
+                            Orientation="Horizontal"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            Width="800"
+    
+    
+                            >
+                                                <TextBlock
+                                Margin="100,20,0,20"
+                                FontSize="24"
+                                FontWeight="Bold"
+                                Text="Property Identification" />
+
+
+
+                                                <Button 
+                                 Margin="300,20,0,20"
+                                Content="clear"
+                                HorizontalAlignment="Center"
+                                Foreground="Black" Click="clearform"
+                                />
+                                            </StackPanel>
 
                     <TextBox
                         x:Name="PropertyIdBox"
                         Margin="0,0,0,15"
                         Header="Property ID*"
                         PlaceholderText="Enter property ID"
-                        Text="{Binding PropertyId, Mode=TwoWay}" />
+                        Text="{Binding PropertyId, Mode=TwoWay}"
+                        Width="600"
+                        CornerRadius="5"
+                        Background="White"
+                        PlaceholderForeground="Black"
+                        BorderBrush="Black"
+                        Foreground="Black"
+                        />
 
                     <TextBox
                         x:Name="LocationBox"
                         Margin="0,0,0,15"
                         Header="Location*"
                         PlaceholderText="Enter location"
-                        Text="{Binding Location, Mode=TwoWay}" />
+                        Text="{Binding Location, Mode=TwoWay}"
+                         Width="600"
+                         CornerRadius="5"
+                         Background="White"
+                         PlaceholderForeground="Black"
+                         BorderBrush="Black"
+                        Foreground="Black"
+                        />
 
                     <ComboBox
-                        Margin="0,0,0,15"
+                        Margin="100,0,0,15"
                         Header="Property Type*"
+                        Background="White"
+                        BorderBrush="Black"
+                        Foreground="Black"
                         SelectedItem="{Binding PropertyType, Mode=TwoWay}">
                         <ComboBoxItem Content="Residential" />
                         <ComboBoxItem Content="Commercial" />
@@ -76,11 +133,23 @@
                         Margin="0,0,0,15"
                         Header="Size (Acres)"
                         PlaceholderText="Enter size"
+                                 Width="600"
+                             CornerRadius="5"
+                             Background="White"
+                             PlaceholderForeground="Black"
+                             BorderBrush="Black"
+                               Foreground="Black"
                         Text="{Binding Size, Mode=TwoWay}" />
                 </StackPanel>
 
                 <!--  Step 2: Owner Details  -->
-                <StackPanel x:Name="Step2Panel" Visibility="Collapsed">
+                <StackPanel x:Name="Step2Panel" 
+                            Visibility="Collapsed"
+                            BorderBrush="Black"
+                            BorderThickness="2"
+                            CornerRadius="5"
+                            Width="800"
+                            >
                     <TextBlock
                         Margin="0,0,0,20"
                         FontSize="24"
@@ -199,23 +268,36 @@
 
             <!--  Navigation Buttons  -->
             <StackPanel
-                Grid.Row="3"
-                Margin="0,30,0,0"
-                HorizontalAlignment="Right"
-                Orientation="Horizontal">
+    Grid.Row="3"
+    Margin="0,30,0,0"
+    HorizontalAlignment="Right"
+    Orientation="Horizontal">
                 <Button
-                    x:Name="BackBtn"
-                    Width="100"
-                    Margin="0,0,10,0"
-                    Content="Back"
-                    Visibility="Collapsed" Click="backbtn" />
+        x:Name="BackBtn"
+        Width="100"
+        Margin="0,0,10,0"
+        Click="backbtn"
+        Content="Back"
+        Visibility="Collapsed" 
+        BorderBrush="#3338A0"
+        BorderThickness="2"
+        Foreground="White"
+        CornerRadius="2"
+        Background="#3338A0"
+        />
                 <Button
-                    x:Name="NextBtn"
-                    Width="100"
-                    Click="nextbtn"
-                    Content="Next" />
+        x:Name="NextBtn"
+        Width="100"
+        Click="nextbtn"
+        Content="Next" 
+         BorderBrush="#3338A0"
+         BorderThickness="2"
+         Foreground="White"
+         CornerRadius="2"
+         Background="#3338A0"
+        
+        />
             </StackPanel>
-
         </Grid>
     </ScrollViewer>
 
