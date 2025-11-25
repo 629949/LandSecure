@@ -2,93 +2,76 @@
     x:Class="LandSecure.LoginPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:LandSecure"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:LandSecure"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
 
-    <Grid
-        Background="White"
-        >
-        
-        
-        
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/landunsplash.jpg" Stretch="UniformToFill" />
+        </Grid.Background>
+
+
         <StackPanel
-            Orientation="Horizontal"
+            Width="400"
+            Height="500"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            Width="700"
-            Height="500"
+            Background="White"
             BorderBrush="Black"
             BorderThickness="1"
-            CornerRadius="2"
-            
-            >
+            CornerRadius="10"
+            Orientation="Vertical">
 
-            <Image Source="/Assets/landunsplash.jpg"
-                   Width="350"
-                   Height="550"
-                   HorizontalAlignment="Center"
-                   Margin="0,20,0,10"
-                   />
+            <TextBlock
+                Margin="0,50,0,0"
+                HorizontalAlignment="Center"
+                FontSize="30"
+                FontWeight="Bold"
+                Foreground="#3338A0"
+                Text="Welcome Back!" />
 
+            <TextBox
+                x:Name="usrname"
+                Width="200"
+                Margin="0,90,0,0"
+                PlaceholderText="User Name" />
+            <PasswordBox
+                x:Name="pwd"
+                Width="200"
+                Margin="25"
+                PlaceholderText="Password" />
 
-            <StackPanel 
-                Width="300"
-                
-                
-                >
-                <TextBlock Text="Welcome Back!"
-                           FontSize="30"
-                           FontWeight="Bold"
-                           HorizontalAlignment="Center"
-                           Margin="0,50,0,0"
-                           Foreground="Black"
-                           />
+            <Button
+                Width="100"
+                Margin="10"
+                HorizontalAlignment="Center"
+                Background="#3338A0"
+                BorderBrush="Black"
+                BorderThickness="2"
+                Content="Login"
+                CornerRadius="3"
+                FontSize="20"
+                Foreground="White" />
 
-                <TextBox x:Name="usrname" 
-                     PlaceholderText="User Name"
-                     Margin="0,90,0,0"
-                        Width="200"
-                     />
-            <PasswordBox x:Name="pwd" 
-                         PlaceholderText="Password"
-                         Width="200"
-                         Margin="25"
-                         />
-
-            <Button Content="Login"
-                    HorizontalAlignment="Center"
-                    Width="100"
-                    FontSize="20"
-                    Margin="10"
-                    BorderBrush="Black"
-                    BorderThickness="2"
-                    CornerRadius="3"
-                    Background="White"
-                    Foreground="Black"
-                    />
-
-                <TextBlock Text="Don't have an account?"
-                           FontSize="15"
-                           HorizontalAlignment="Center"
-                           Margin="20,30,0,0"
-                    Foreground="Black"
-                           
-                           
-                           />
-                <TextBlock Text="Forgot Password"
-                           FontSize="15"
-                            HorizontalAlignment="Center"
-                    Foreground="Black"
-                           
-                           />
-            </StackPanel>
-
+            <TextBlock
+                Margin="20,30,0,0"
+                HorizontalAlignment="Center"
+                FontSize="15"
+                Foreground="Black"
+                Text="Don't have an account?" />
+            <TextBlock
+                HorizontalAlignment="Center"
+                FontSize="15"
+                Foreground="Black"
+                Text="Forgot Password" />
         </StackPanel>
-        
-        
+
+
+
+
 
     </Grid>
 </Page>
