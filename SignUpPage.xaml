@@ -43,9 +43,12 @@
                     HorizontalAlignment="Center"
                     FontSize="15"
                     Text="Create your account" />
-            
-            
-                <TextBox Width="200"
+                    <TextBox x:Name="FirstNameBox" Width="200" PlaceholderText="First Name" />
+                    <TextBox x:Name="LastNameBox" Width="200" PlaceholderText="Last Name" />
+
+
+
+            <TextBox Width="200"
                          Text="First Name" 
                          CornerRadius="5"
                          Height="50"
@@ -84,7 +87,7 @@
                     Margin="10"
                     PlaceholderText="Confirm Password" />
 
-                <Button
+            <Button
                     Width="100"
                     Margin="10"
                     HorizontalAlignment="Center"
@@ -94,8 +97,9 @@
                     Content="Signup"
                     CornerRadius="3"
                     FontSize="20"
-                    Foreground="white" />
-            </StackPanel>
+                    Foreground="white"
+                    Click="Signup_Click"/>
+        </StackPanel>
 
     
 
