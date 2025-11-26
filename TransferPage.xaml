@@ -262,7 +262,8 @@
                     <Button
                         Margin="0,0,0,10"
                         HorizontalAlignment="Left"
-                        Content="📎 Upload Title Deed" />
+                        Content="📎 Upload Title Deed"
+                        Click="UploadTitleDeed_Click" />
                     <TextBlock
                         x:Name="TitleDeedStatus"
                         Margin="0,0,0,20"
@@ -272,7 +273,7 @@
                     <Button
                         Margin="0,0,0,10"
                         HorizontalAlignment="Left"
-                        Content="📎 Upload ID Copy" />
+                        Content="📎 Upload ID Copy" Click="UploadIdCopy_Click" />
                     <TextBlock
                         x:Name="IdCopyStatus"
                         Margin="0,0,0,20"

@@ -69,7 +69,7 @@
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition />
-            <RowDefinition Height="200*" />
+            <RowDefinition Height="215*" />
             <RowDefinition Height="0*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -84,7 +84,36 @@
             VerticalScrollBarVisibility="Auto">
 
 
+
+
+
+
+
             <StackPanel>
+
+                <Grid Height="800">
+                    <!-- Background image -->
+                    <Image Source="/Assets/header_land_image.jpg" Stretch="UniformToFill" />
+
+                    <!-- subtle dark overlay for contrast (only the rectangle is semi-transparent) -->
+                    <Rectangle Fill="Black" Opacity="0.30" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+
+                    <!-- Title centered over the image; uses theme foreground so it adapts to light/dark -->
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="6">
+                        <TextBlock Text="landsecure"
+                           FontSize="56"
+                           FontWeight="Bold"
+                           Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
+                           TextAlignment="Center" />
+
+                        <!-- optional tagline; remove if not wanted -->
+                        <TextBlock Text="Secure your land • Verify • Transfer"
+                           FontSize="16"
+                           Foreground="{ThemeResource SystemControlForegroundBaseLowBrush}"
+                           Opacity="0.95"
+                           TextAlignment="Center" />
+                    </StackPanel>
+                </Grid>
                 <StackPanel>
 
                     <TextBlock
