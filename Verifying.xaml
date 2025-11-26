@@ -8,17 +8,11 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
 
-    <ScrollViewer
-        Foreground="Black"
-        Background="#F8FAFC"
-        
-    
-        >
-        <Grid Padding="40"
-              Background="White"
-              Width="900"
-            
-              >
+    <ScrollViewer Background="#F8FAFC" Foreground="Black">
+        <Grid
+            Width="900"
+            Padding="40"
+            Background="White">
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -29,24 +23,22 @@
 
             <TextBlock
                 Grid.Row="0"
+                Width="800"
                 Margin="100,0,0,20"
                 FontSize="32"
                 FontWeight="Bold"
-                Width="800"
-                
                 Text="Document Verification" />
 
             <!--  Progress Bar  -->
-            <StackPanel Grid.Row="1" Margin="0,0,0,30"
-                         BorderBrush="Black"
-                         BorderThickness="2"
-                         CornerRadius="5"
-                         Width="800"
-                         Height="100"
-                        Background="#3338A0"
-                        
-                        
-                        >
+            <StackPanel
+                Grid.Row="1"
+                Width="800"
+                Height="100"
+                Margin="0,0,0,30"
+                Background="#3338A0"
+                BorderBrush="Black"
+                BorderThickness="2"
+                CornerRadius="5">
                 <TextBlock
                     x:Name="StepIndicator"
                     Margin="100,20,100,10"
@@ -56,7 +48,7 @@
                 <ProgressBar
                     x:Name="ProgressBar"
                     Height="10"
-                      Margin="100,0,100,10"
+                    Margin="100,0,100,10"
                     Maximum="100"
                     Value="33" />
             </StackPanel>
@@ -64,73 +56,69 @@
             <Grid Grid.Row="2">
 
                 <!--  Step 1: Property Details  -->
-                <StackPanel x:Name="Step1Panel" Visibility="Visible"
-                            BorderBrush="Black"
-                            BorderThickness="2"
-                            CornerRadius="5"
-                            Width="800"
-                            >
+                <StackPanel
+                    x:Name="Step1Panel"
+                    Width="800"
+                    BorderBrush="Black"
+                    BorderThickness="2"
+                    CornerRadius="5"
+                    Visibility="Visible">
                     <StackPanel
-                        Orientation="Horizontal"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"
                         Width="800"
-                        
-                        
-                        >
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
                         <TextBlock
                             Margin="100,20,0,20"
                             FontSize="24"
                             FontWeight="Bold"
                             Text="Property Identification" />
-                        
-                        
-                        
-                        <Button 
-                             Margin="300,20,0,20"
-                            Content="clear"
+
+
+
+                        <Button
+                            Margin="300,20,0,20"
                             HorizontalAlignment="Center"
-                            Foreground="Black" Click="clearform"
-                            />
+                            Click="clearform"
+                            Content="clear"
+                            Foreground="Black" />
                     </StackPanel>
-                    
-                    
+
+
 
                     <TextBox
                         x:Name="PropertyIdBox"
-                        Margin="0,0,0,15"
-                        Header="Property ID*"
-                        PlaceholderText="Enter property ID"
-                        Text="{Binding PropertyId, Mode=TwoWay}" 
-                        TextChanged="PropertyIdBox_TextChanged" 
                         Width="600"
-                        CornerRadius="5"
+                        Margin="0,0,0,15"
                         Background="White"
-                        PlaceholderForeground="Black"
                         BorderBrush="Black"
+                        CornerRadius="5"
                         Foreground="Black"
-                        />
+                        Header="Property ID*"
+                        PlaceholderForeground="Black"
+                        PlaceholderText="Enter property ID"
+                        Text="{Binding PropertyId, Mode=TwoWay}"
+                        TextChanged="PropertyIdBox_TextChanged" />
 
                     <TextBox
                         x:Name="LocationBox"
+                        Width="600"
                         Margin="0,0,0,15"
+                        Background="White"
+                        BorderBrush="Black"
+                        CornerRadius="5"
+                        Foreground="Black"
                         Header="Location*"
+                        PlaceholderForeground="Black"
                         PlaceholderText="Enter location"
-                        Text="{Binding Location, Mode=TwoWay}"
-                          Width="600"
-                          CornerRadius="5"
-                          Background="White"
-                          PlaceholderForeground="Black"
-                          BorderBrush="Black"
-                         Foreground="Black"
-                        />
+                        Text="{Binding Location, Mode=TwoWay}" />
 
                     <ComboBox
                         Margin="100,0,0,15"
-                        Header="Property Type*"
                         Background="White"
                         BorderBrush="Black"
                         Foreground="Black"
+                        Header="Property Type*"
                         SelectedItem="{Binding PropertyType, Mode=TwoWay}">
                         <ComboBoxItem Content="Residential" />
                         <ComboBoxItem Content="Commercial" />
@@ -138,25 +126,26 @@
                     </ComboBox>
 
                     <TextBox
+                        Width="600"
                         Margin="0,0,0,15"
+                        Background="White"
+                        BorderBrush="Black"
+                        CornerRadius="5"
+                        Foreground="Black"
                         Header="Size (Acres)"
+                        PlaceholderForeground="Black"
                         PlaceholderText="Enter size"
-                          Width="600"
-                          CornerRadius="5"
-                          Background="White"
-                          PlaceholderForeground="Black"
-                          BorderBrush="Black"
-                            Foreground="Black"
                         Text="{Binding Size, Mode=TwoWay}" />
                 </StackPanel>
 
                 <!--  Step 2: Owner Details  -->
-                <StackPanel x:Name="Step2Panel"
-                            Visibility="Collapsed"
-                             BorderBrush="Black"
-                             BorderThickness="2"
-                             CornerRadius="5"
-                             Width="800">
+                <StackPanel
+                    x:Name="Step2Panel"
+                    Width="800"
+                    BorderBrush="Black"
+                    BorderThickness="2"
+                    CornerRadius="5"
+                    Visibility="Collapsed">
                     <TextBlock
                         Margin="0,0,0,20"
                         FontSize="24"
@@ -165,79 +154,81 @@
 
                     <TextBox
                         x:Name="OwnerNameBox"
+                        Width="600"
                         Margin="0,0,0,15"
-                        Header="Owner Name*"
-                        PlaceholderText="Full legal name"
-                         Width="600"
-                         CornerRadius="5"
-                         Background="White"
-                         PlaceholderForeground="Black"
-                         BorderBrush="Black"
+                        Background="White"
+                        BorderBrush="Black"
+                        CornerRadius="5"
                         Foreground="Black"
+                        Header="Owner Name*"
+                        PlaceholderForeground="Black"
+                        PlaceholderText="Full legal name"
                         Text="{Binding OwnerName, Mode=TwoWay}" />
 
                     <TextBox
                         x:Name="identification"
+                        Width="600"
                         Margin="0,0,0,15"
-                        Header="National ID*"
-                        PlaceholderText="Enter ID number"
-                         Width="600"
-                         CornerRadius="5"
-                         Background="White"
-                         PlaceholderForeground="Black"
-                         BorderBrush="Black"
+                        Background="White"
+                        BorderBrush="Black"
+                        CornerRadius="5"
                         Foreground="Black"
+                        Header="National ID*"
+                        PlaceholderForeground="Black"
+                        PlaceholderText="Enter ID number"
                         Text="{Binding NationalId, Mode=TwoWay}" />
 
                     <TextBox
                         x:Name="contactinfo"
+                        Width="600"
                         Margin="0,0,0,15"
+                        Background="White"
+                        BorderBrush="Black"
+                        CornerRadius="5"
+                        Foreground="Black"
                         Header="Phone Number*"
+                        PlaceholderForeground="Black"
                         PlaceholderText="+256 XXX XXX XXX"
-                         Width="600"
-                                 CornerRadius="5"
-                                 Background="White"
-                                 PlaceholderForeground="Black"
-                                 BorderBrush="Black"
-                                Foreground="Black"
                         Text="{Binding Contact, Mode=TwoWay}" />
 
                     <TextBox
                         x:Name="emailaddress"
+                        Width="600"
                         Margin="0,0,0,15"
-                        Header="Email"
-                        PlaceholderText="owner@example.com"
-                         Width="600"
-                         CornerRadius="5"
-                         Background="White"
-                         PlaceholderForeground="Black"
-                         BorderBrush="Black"
+                        Background="White"
+                        BorderBrush="Black"
+                        CornerRadius="5"
                         Foreground="Black"
-                        Text="{Binding Email, Mode=TwoWay}" 
-                        
-                        />
+                        Header="Email"
+                        PlaceholderForeground="Black"
+                        PlaceholderText="owner@example.com"
+                        Text="{Binding Email, Mode=TwoWay}" />
                 </StackPanel>
 
                 <!--  Step 3: Document Upload  -->
-                <StackPanel x:Name="Step3Panel" 
-                            Visibility="Collapsed"
-                             BorderBrush="Black"
-                             BorderThickness="2"
-                             CornerRadius="5"
-                             Width="800">
+                <StackPanel
+                    x:Name="Step3Panel"
+                    Width="800"
+                    BorderBrush="Black"
+                    BorderThickness="2"
+                    CornerRadius="5"
+                    Visibility="Collapsed">
                     <TextBlock
                         Margin="0,0,0,20"
                         FontSize="24"
                         FontWeight="Bold"
                         Text="Upload Documents" />
 
-                    <TextBlock Margin="0,0,0,15" 
-                               Text="Please upload the following documents:" />
+                    <TextBlock Margin="0,0,0,15" Text="Please upload the following documents:" />
 
                     <Button
                         Margin="0,0,0,10"
                         HorizontalAlignment="Left"
-                        Content=" Upload Title Deed" />
+                        Background="#3338A0"
+                        Click="UploadTitleDeed_Click"
+                        Content=" Upload Title Deed"
+                        CornerRadius="5"
+                        Foreground="white" />
                     <TextBlock
                         x:Name="TitleDeedStatus"
                         Margin="0,0,0,20"
@@ -247,7 +238,11 @@
                     <Button
                         Margin="0,0,0,10"
                         HorizontalAlignment="Left"
-                        Content="Upload ID Copy" />
+                        Background="#3338A0"
+                        Click="UploadIdCopy_Click"
+                        Content="Upload ID Copy"
+                        CornerRadius="5"
+                        Foreground="white" />
                     <TextBlock
                         x:Name="IdCopyStatus"
                         Margin="0,0,0,20"
@@ -270,20 +265,18 @@
                         Text="Scan Fingerprint" />
 
                     <TextBox
+                        Width="600"
                         Height="400"
                         Margin="0,0,0,15"
                         AcceptsReturn="True"
-                        Header="Additional Notes"
-                        PlaceholderText="Any additional information..."
-                        Text="{Binding Notes, Mode=TwoWay}"
-                        TextWrapping="Wrap" 
                         Background="White"
                         BorderBrush="Gray"
                         BorderThickness="1"
-                        Width="600"
                         CornerRadius="5"
-                        
-                        />
+                        Header="Additional Notes"
+                        PlaceholderText="Any additional information..."
+                        Text="{Binding Notes, Mode=TwoWay}"
+                        TextWrapping="Wrap" />
                 </StackPanel>
             </Grid>
 
@@ -297,27 +290,24 @@
                     x:Name="BackBtn"
                     Width="100"
                     Margin="0,0,10,0"
-                    Click="backbtn"
-                    Content="Back"
-                    Visibility="Collapsed" 
+                    Background="#3338A0"
                     BorderBrush="#3338A0"
                     BorderThickness="2"
-                    Foreground="White"
+                    Click="backbtn"
+                    Content="Back"
                     CornerRadius="2"
-                    Background="#3338A0"
-                    />
+                    Foreground="White"
+                    Visibility="Collapsed" />
                 <Button
                     x:Name="NextBtn"
                     Width="100"
+                    Background="#3338A0"
+                    BorderBrush="#3338A0"
+                    BorderThickness="2"
                     Click="nextbtn"
-                    Content="Next" 
-                     BorderBrush="#3338A0"
-                     BorderThickness="2"
-                     Foreground="White"
-                     CornerRadius="2"
-                     Background="#3338A0"
-                    
-                    />
+                    Content="Next"
+                    CornerRadius="2"
+                    Foreground="White" />
             </StackPanel>
 
         </Grid>

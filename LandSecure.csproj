@@ -149,10 +149,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\fingerprint.svg" />
+    <Content Include="Assets\header_land_image.jpg" />
+    <Content Include="Assets\header_land_image2.jpg" />
+    <Content Include="Assets\header_land_image3.jpg" />
     <Content Include="Assets\landnew.jpeg" />
     <Content Include="Assets\landunsplash.jpg" />
     <Content Include="Assets\lawyer.jpeg" />
+    <Content Include="Assets\legal_help_image.jpg" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\verification_image.jpg" />
     <Content Include="Properties\Default.rd.xml" />
   </ItemGroup>
   <ItemGroup>
