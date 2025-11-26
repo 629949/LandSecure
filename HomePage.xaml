@@ -92,26 +92,35 @@
             <StackPanel>
 
                 <Grid Height="800">
-                    <!-- Background image -->
+                    <!--  Background image  -->
                     <Image Source="/Assets/header_land_image.jpg" Stretch="UniformToFill" />
 
-                    <!-- subtle dark overlay for contrast (only the rectangle is semi-transparent) -->
-                    <Rectangle Fill="Black" Opacity="0.30" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    <!--  subtle dark overlay for contrast (only the rectangle is semi-transparent)  -->
+                    <Rectangle
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Fill="Black"
+                        Opacity="0.30" />
 
-                    <!-- Title centered over the image; uses theme foreground so it adapts to light/dark -->
-                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="6">
-                        <TextBlock Text="landsecure"
-                           FontSize="56"
-                           FontWeight="Bold"
-                           Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
-                           TextAlignment="Center" />
+                    <!--  Title centered over the image; uses theme foreground so it adapts to light/dark  -->
+                    <StackPanel
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Spacing="6">
+                        <TextBlock
+                            FontSize="56"
+                            FontWeight="Bold"
+                            Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
+                            Text="landsecure"
+                            TextAlignment="Center" />
 
-                        <!-- optional tagline; remove if not wanted -->
-                        <TextBlock Text="Secure your land • Verify • Transfer"
-                           FontSize="16"
-                           Foreground="{ThemeResource SystemControlForegroundBaseLowBrush}"
-                           Opacity="0.95"
-                           TextAlignment="Center" />
+                        <!--  optional tagline; remove if not wanted  -->
+                        <TextBlock
+                            FontSize="16"
+                            Foreground="{ThemeResource SystemControlForegroundBaseLowBrush}"
+                            Opacity="0.95"
+                            Text="Secure your land • Verify • Transfer"
+                            TextAlignment="Center" />
                     </StackPanel>
                 </Grid>
                 <StackPanel>
@@ -233,71 +242,87 @@
 
                 <!--  footer  -->
                 <StackPanel
-                    Height="600"
-                    Margin="0,20,0,20"
+                    Width="1200"
+                    Height="400"
+                    Padding="20"
                     HorizontalAlignment="Center"
-                    VerticalAlignment="Bottom"
-                    Orientation="Vertical">
-                    <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
+                    VerticalAlignment="Center"
+                    Background="#f5f5f5"
+                    Orientation="Horizontal"
+                    Spacing="20">
+
+                    <!--  SERVICES CARD  -->
+                    <StackPanel
+                        Width="300"
+                        Margin="250,0,0,0"
+                        Padding="20"
+                        VerticalAlignment="Center"
+                        Background="White"
+                        BorderBrush="#DDDDDD"
+                        BorderThickness="1"
+                        CornerRadius="12"
+                        Orientation="Vertical"
+                        Spacing="10">
+
+                        <StackPanel.Shadow>
+                            <ThemeShadow />
+                        </StackPanel.Shadow>
+
+
                         <TextBlock
-                            Margin="0,0,5,0"
-                            FontSize="36"
+                            FontSize="22"
                             FontWeight="Bold"
-                            Foreground="DarkBlue"
-                            Text="Want to get in-touch " />
+                            Text="Our Services:" />
 
-
-                        <StackPanel
-                            Height="400"
-                            HorizontalAlignment="Stretch"
-                            Orientation="Horizontal">
-
-                            <StackPanel
-                                Width="300"
-                                Margin="20"
-                                VerticalAlignment="Center"
-                                BorderBrush="Black"
-                                BorderThickness="1"
-                                Orientation="Vertical"
-                                Spacing="6">
-                                <TextBlock
-                                    FontSize="20"
-                                    FontWeight="Bold"
-                                    Text="Our Services:" />
-                                <TextBlock Text="• Land Verification" />
-                                <TextBlock Text="• Document Authentication" />
-                                <TextBlock Text="• Title Transfer" />
-                                <TextBlock Text="• Legal Support" />
-                            </StackPanel>
-
-                            <StackPanel
-                                Width="300"
-                                Margin="20"
-                                HorizontalAlignment="Stretch"
-                                VerticalAlignment="Center"
-                                BorderBrush="Black"
-                                BorderThickness="1"
-                                Orientation="Vertical"
-                                Spacing="6">
-                                <TextBlock
-                                    FontSize="20"
-                                    FontWeight="Bold"
-                                    Text="How It Works:" />
-                                <TextBlock FontWeight="Bold" Text="• Create an account" />
-                                <TextBlock FontWeight="Bold" Text="• Upload your documents" />
-                                <TextBlock FontWeight="Bold" Text="• Get verified results" />
-                                <TextBlock FontWeight="Bold" Text="• Complete your transaction" />
-                            </StackPanel>
-                        </StackPanel>
-
-                        <StackPanel />
-
-
+                        <TextBlock FontSize="16" Text="• Land Verification" />
+                        <TextBlock FontSize="16" Text="• Document Authentication" />
+                        <TextBlock FontSize="16" Text="• Title Transfer" />
+                        <TextBlock FontSize="16" Text="• Legal Support" />
                     </StackPanel>
 
-                    <TextBlock Text="LandSecure © 2024. All rights reserved." />
+                    <!--  HOW IT WORKS CARD  -->
+                    <StackPanel
+                        Width="300"
+                        Margin="20"
+                        Padding="20"
+                        VerticalAlignment="Center"
+                        Background="White"
+                        BorderBrush="#DDDDDD"
+                        BorderThickness="1"
+                        CornerRadius="12"
+                        Orientation="Vertical"
+                        Spacing="10">
+
+                        <StackPanel.Shadow>
+                            <ThemeShadow />
+                        </StackPanel.Shadow>
+
+
+                        <TextBlock
+                            FontSize="22"
+                            FontWeight="Bold"
+                            Text="How It Works:" />
+
+                        <TextBlock
+                            FontSize="16"
+                            FontWeight="SemiBold"
+                            Text="• Create an account" />
+                        <TextBlock
+                            FontSize="16"
+                            FontWeight="SemiBold"
+                            Text="• Upload your documents" />
+                        <TextBlock
+                            FontSize="16"
+                            FontWeight="SemiBold"
+                            Text="• Get verified results" />
+                        <TextBlock
+                            FontSize="16"
+                            FontWeight="SemiBold"
+                            Text="• Complete your transaction" />
+                    </StackPanel>
 
                 </StackPanel>
+
             </StackPanel>
         </ScrollViewer>
     </Grid>
