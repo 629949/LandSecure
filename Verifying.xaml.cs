@@ -1,12 +1,15 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Media.Protection.PlayReady;
 using Windows.Storage;
 using Windows.Storage.Pickers;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -14,6 +17,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.Web.Http;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -45,6 +49,7 @@ namespace LandSecure
         private int currentStep = 1;
 
         private VerificationForm formData;
+        private static readonly HttpClient client = new HttpClient();
         public Verifying()
         {
             this.InitializeComponent(); 
@@ -200,11 +205,13 @@ namespace LandSecure
 
         private async void SubmitToDatabase()
         {
-          
+            // TODO: Replace with your actual database logic
+            // Example using SQLite, Entity Framework, or Web API
 
             try
             {
-                
+                // Simulate database save
+                // await DatabaseService.SaveVerificationAsync(formData);
 
                 ContentDialog successDialog = new ContentDialog
                 {
@@ -227,6 +234,84 @@ namespace LandSecure
                 };
                 await errorDialog.ShowAsync();
             }
+        }
+
+        private void OpenLoginPopup_Click(object sender, RoutedEventArgs e)
+        {
+            LoginPopupOverlay.Visibility = Visibility.Visible;
+        }
+
+        private void CloseLoginPopup_Click(object sender, RoutedEventArgs e)
+        {
+            LoginPopupOverlay.Visibility = Visibility.Collapsed;
+        }
+
+        private async void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            string username = LoginUsernameBox.Text.Trim();
+            string password = LoginPasswordBox.Password.Trim();
+
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                await new MessageDialog("Please enter username and password.").ShowAsync();
+                return;
+            }
+
+            string firebaseUrl = "https://landapp-2e30d-default-rtdb.firebaseio.com/users.json";
+
+            var response = await client.GetAsync(new Uri(firebaseUrl));
+
+            if (!response.IsSuccessStatusCode)
+            {
+                await new MessageDialog("Unable to connect to server!").ShowAsync();
+                return;
+            }
+
+            string jsonData = await response.Content.ReadAsStringAsync();
+
+            var usersDict = JsonConvert.DeserializeObject<Dictionary<string, UserModel>>(jsonData);
+
+            if (usersDict == null)
+            {
+                await new MessageDialog("No users found in database.").ShowAsync();
+                return;
+            }
+
+            var user = usersDict.Values.FirstOrDefault(u =>
+                u.Username == username && u.Password == password);
+
+            if (user != null)
+            {
+                // SUCCESS 🎉
+                LoginPopupOverlay.Visibility = Visibility.Collapsed;
+
+                await new MessageDialog($"Welcome {user.FirstName}!").ShowAsync();
+            }
+            else
+            {
+                // WRONG LOGIN ❌
+                ContentDialog dialog = new ContentDialog
+                {
+                    Title = "Login Failed",
+                    Content = "Incorrect username or password.",
+                    CloseButtonText = "OK"
+                };
+                await dialog.ShowAsync();
+            }
+        }
+
+
+        private void SignUpButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(SignUpPage));
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            LoginPopupOverlay.Visibility = Visibility.Visible;
+
+            // allow interaction ONLY with the popup
+            LoginPopupOverlay.IsHitTestVisible = true;
         }
 
         private void PropertyIdBox_TextChanged(object sender, TextChangedEventArgs e)
