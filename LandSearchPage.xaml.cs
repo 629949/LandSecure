@@ -22,9 +22,24 @@ namespace LandSecure
     /// </summary>
     public sealed partial class LandSearchPage : Page
     {
+        public LandSearchModel Filters { get; set; } = new LandSearchModel();
+
+        public List<LandProperty> AllProperties { get; set; }
+        public List<LandProperty> FilteredProperties { get; set; }
+
         public LandSearchPage()
         {
             this.InitializeComponent();
         }
+
+        public class SearchModel
+        {
+            public string Location { get; set; }
+            public string Size { get; set; }
+
+            public int Price {get; set;}
+        }
+
+       
     }
 }
