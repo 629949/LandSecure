@@ -25,11 +25,23 @@
             CornerRadius="10"
             Orientation="Vertical">
 
+            <!--  FIX: Use Image directly in StackPanel instead of inside TextBlock  -->
+
+            <StackPanel
+                Width="60"
+                Margin="0,30,0,0"
+                CornerRadius="50">
+                <Image
+                    Width="60"
+                    Height="60"
+                    Source="/Assets/header_land_image.jpg"
+                    Stretch="Fill" />
+            </StackPanel>
 
             <TextBlock
-                Margin="0,50,0,0"
+                Margin="0,10,0,0"
                 HorizontalAlignment="Center"
-                FontSize="30"
+                FontSize="10"
                 FontWeight="Bold"
                 Foreground="#3338A0"
                 Text="Welcome" />
@@ -38,10 +50,8 @@
                 Margin="0,10,0,0"
                 HorizontalAlignment="Center"
                 FontSize="15"
+                Foreground="#3338A0"
                 Text="Create your account" />
-
-
-
 
             <TextBox
                 Width="200"
