@@ -3,7 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Media.Protection.PlayReady;
@@ -18,6 +20,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.Web.Http;
+using HttpClient = Windows.Web.Http.HttpClient;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -205,23 +208,62 @@ namespace LandSecure
 
         private async void SubmitToDatabase()
         {
-            // TODO: Replace with your actual database logic
-            // Example using SQLite, Entity Framework, or Web API
-
             try
             {
-                // Simulate database save
-                // await DatabaseService.SaveVerificationAsync(formData);
+                // Step 3 validation (ensure files uploaded)
+                if (TitleDeedStatus.Text == "No file selected" || IdCopyStatus.Text == "No file selected")
+                {
+                    await new MessageDialog("Please upload required documents.").ShowAsync();
+                    return;
+                }
 
+                // Build verification data object
+                var verificationData = new
+                {
+                    PropertyId = PropertyIdBox.Text,
+                    Location = LocationBox.Text,
+                    PropertyType = (PropertyTypeComboBox.SelectedItem as ComboBoxItem)?.Content.ToString(),
+                    Size = SizeBox.Text,
+
+                    OwnerName = OwnerNameBox.Text,
+                    NationalId = identification.Text,
+                    Contact = contactinfo.Text,
+                    Email = emailaddress.Text,
+
+                    TitleDeedFile = TitleDeedStatus.Text,
+                    IdCopyFile = IdCopyStatus.Text,
+                    Notes = NotesBox.Text,
+
+                    Status = "Pending Verification",
+                    SubmittedAt = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss")
+                };
+
+                // Firebase Realtime DB path
+                string url = "https://landapp-2e30d-default-rtdb.firebaseio.com/verifications.json";
+
+                // Convert to JSON
+                string json = JsonConvert.SerializeObject(verificationData);
+
+                // Save to Firebase
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var response = await client.PostAsync(new Uri(url), content);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    await new MessageDialog("Failed to submit verification request.").ShowAsync();
+                    return;
+                }
+
+                // Success dialog
                 ContentDialog successDialog = new ContentDialog
                 {
                     Title = "Success!",
-                    Content = $"Verification request submitted successfully!\n\nProperty ID: {formData.PropertyId}\nOwner: {formData.OwnerName}\n\nYou will receive updates via {formData.Contact}",
+                    Content = "Verification request submitted successfully.\nYou will receive updates soon.",
                     CloseButtonText = "OK"
                 };
+
                 await successDialog.ShowAsync();
 
-                // Navigate back or to confirmation page
                 Frame.Navigate(typeof(HomePage));
             }
             catch (Exception ex)
@@ -235,6 +277,8 @@ namespace LandSecure
                 await errorDialog.ShowAsync();
             }
         }
+
+
 
         private void OpenLoginPopup_Click(object sender, RoutedEventArgs e)
         {

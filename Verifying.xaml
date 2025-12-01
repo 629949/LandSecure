@@ -136,6 +136,7 @@
                         Header="Size (Acres)"
                         PlaceholderForeground="Black"
                         PlaceholderText="Enter size"
+                        x:Name="SizeBox"
                         Text="{Binding Size, Mode=TwoWay}" />
                 </StackPanel>
 
@@ -275,6 +276,7 @@
                         BorderThickness="1"
                         CornerRadius="5"
                         Header="Additional Notes"
+                        x:Name=""
                         PlaceholderText="Any additional information..."
                         Text="{Binding Notes, Mode=TwoWay}"
                         TextWrapping="Wrap" />
