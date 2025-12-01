@@ -323,6 +323,15 @@
 
                 </StackPanel>
 
+                <TextBlock
+                    Width="300"
+                    Margin="20"
+                    Padding="20"
+                    VerticalAlignment="Center"
+                    FontSize="14"
+                    Foreground="Gray"
+                    Text="© 2025 LandSecure. All rights reserved. | Privacy Policy | Terms of Service"
+                    TextWrapping="Wrap" />
             </StackPanel>
         </ScrollViewer>
     </Grid>

@@ -11,6 +11,7 @@ using Windows.Foundation.Collections;
 using Windows.Media.Protection.PlayReady;
 using Windows.Storage;
 using Windows.Storage.Pickers;
+using Windows.System;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -20,7 +21,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.Web.Http;
-using HttpClient = Windows.Web.Http.HttpClient;
+using HttpClient = System.Net.Http.HttpClient;
+
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -239,14 +241,13 @@ namespace LandSecure
                 };
 
                 // Firebase Realtime DB path
-                string url = "https://landapp-2e30d-default-rtdb.firebaseio.com/verifications.json";
-
-                // Convert to JSON
                 string json = JsonConvert.SerializeObject(verificationData);
 
-                // Save to Firebase
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
-                var response = await client.PostAsync(new Uri(url), content);
+                string firebaseUrl = "https://landapp-2e30d-default-rtdb.firebaseio.com/verifications.json";
+
+                var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+
+                System.Net.Http.HttpResponseMessage response = await client.PostAsync(firebaseUrl, content);
 
                 if (!response.IsSuccessStatusCode)
                 {

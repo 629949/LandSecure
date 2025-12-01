@@ -11,8 +11,7 @@
     <Grid>
 
         <Grid.Background>
-            <ImageBrush ImageSource="/Assets/landunsplash.jpg" 
-                        Stretch="UniformToFill" />
+            <ImageBrush ImageSource="/Assets/landunsplash.jpg" Stretch="UniformToFill" />
         </Grid.Background>
 
         <StackPanel
@@ -20,88 +19,95 @@
             Height="600"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
+            Background="white"
             BorderBrush="Black"
             BorderThickness="1"
             CornerRadius="10"
-            Orientation="Vertical"
-            Background="white"
-            >
+            Orientation="Vertical">
 
-       
-                <TextBlock
-                    Margin="0,50,0,0"
-                    HorizontalAlignment="Center"
-                    FontSize="30"
-                    FontWeight="Bold"
-                    Foreground="#3338A0"
-                    Text="Welcome" 
-                    
-                    />
+            <!--  FIX: Use Image directly in StackPanel instead of inside TextBlock  -->
 
-                <TextBlock
-                    Margin="0,10,0,0"
-                    HorizontalAlignment="Center"
-                    FontSize="15"
-                    Text="Create your account" />
-                    <TextBox x:Name="FirstNameBox" Width="200" PlaceholderText="First Name" />
-                    <TextBox x:Name="LastNameBox" Width="200" PlaceholderText="Last Name" />
+            <StackPanel
+                Width="60"
+                Margin="0,30,0,0"
+                CornerRadius="50">
+                <Image
+                    Width="60"
+                    Height="60"
+                    Source="/Assets/header_land_image.jpg"
+                    Stretch="Fill" />
+            </StackPanel>
 
+            <TextBlock
+                Margin="0,10,0,0"
+                HorizontalAlignment="Center"
+                FontSize="10"
+                FontWeight="Bold"
+                Foreground="#3338A0"
+                Text="Welcome" />
 
+            <TextBlock
+                Margin="0,10,0,0"
+                HorizontalAlignment="Center"
+                FontSize="15"
+                Foreground="#3338A0"
+                Text="Create your account" />
 
-            <TextBox Width="200"
-                         Text="First Name" 
-                         CornerRadius="5"
-                         Height="50"
-                         Margin="10"
-                         />
-                <TextBox Width="200" 
-                         Text="Last Name"
-                         CornerRadius="5"
-                            Height="50"
-                            Margin="10"
-                         />
-
-                <TextBox
-                    x:Name="usrname"
-                    Width="200"
-                    PlaceholderText="User Name"
-                    CornerRadius="5"
-                    Height="50"
-                    Margin="10"
-                    />
-            
-            
-                <PasswordBox
-                    x:Name="pwd"
-                    Width="200"
-                CornerRadius="5"
+            <TextBox
+                x:Name="FirstNameBox"
+                Width="200"
                 Height="50"
                 Margin="10"
-                    PlaceholderText="Password" />
+                CornerRadius="5"
+                PlaceholderText="First Name" />
+            <TextBox
+                x:Name="LastNameBox"
+                Width="200"
+                Height="50"
+                Margin="10"
+                CornerRadius="5"
+                PlaceholderText="Last Name" />
 
-                <PasswordBox
-                    x:Name="confirmpwd"
-                    Width="200"
-                    CornerRadius="5"
-                    Height="50"
-                    Margin="10"
-                    PlaceholderText="Confirm Password" />
+            <TextBox
+                x:Name="usrname"
+                Width="200"
+                Height="50"
+                Margin="10"
+                CornerRadius="5"
+                PlaceholderText="User Name" />
+
+
+            <PasswordBox
+                x:Name="pwd"
+                Width="200"
+                Height="50"
+                Margin="10"
+                CornerRadius="5"
+                PlaceholderText="Password" />
+
+            <PasswordBox
+                x:Name="confirmpwd"
+                Width="200"
+                Height="50"
+                Margin="10"
+                CornerRadius="5"
+                PlaceholderText="Confirm Password" />
 
             <Button
-                    Width="100"
-                    Margin="10"
-                    HorizontalAlignment="Center"
-                    Background="#3338A0"
-                    BorderBrush="Black"
-                    BorderThickness="2"
-                    Content="Signup"
-                    CornerRadius="3"
-                    FontSize="20"
-                    Foreground="white"
-                    Click="Signup_Click"/>
+                Width="100"
+                Margin="10"
+                HorizontalAlignment="Center"
+                Background="#3338A0"
+                BorderBrush="Black"
+                BorderThickness="2"
+                Click="Signup_Click"
+                Content="Signup"
+                CornerRadius="3"
+                FontSize="20"
+                Foreground="white" />
         </StackPanel>
 
-    
+
 
 
     </Grid>
