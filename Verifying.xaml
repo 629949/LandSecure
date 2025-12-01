@@ -120,6 +120,7 @@
                         BorderBrush="Black"
                         Foreground="Black"
                         Header="Property Type*"
+                        x:Name="PropertyTypeComboBox"
                         SelectedItem="{Binding PropertyType, Mode=TwoWay}">
                         <ComboBoxItem Content="Residential" />
                         <ComboBoxItem Content="Commercial" />
@@ -136,6 +137,7 @@
                         Header="Size (Acres)"
                         PlaceholderForeground="Black"
                         PlaceholderText="Enter size"
+                        x:Name="SizeBox"
                         Text="{Binding Size, Mode=TwoWay}" />
                 </StackPanel>
 
@@ -275,6 +277,7 @@
                         BorderThickness="1"
                         CornerRadius="5"
                         Header="Additional Notes"
+                        x:Name="NotesBox"
                         PlaceholderText="Any additional information..."
                         Text="{Binding Notes, Mode=TwoWay}"
                         TextWrapping="Wrap" />
