@@ -19,64 +19,101 @@
             BorderThickness="1"
             CornerRadius="5"
             Orientation="Vertical">
-            <TextBlock
-                Width="400"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                FontSize="40"
-                FontStyle="Normal"
-                Foreground="Black"
-                Text="searching for land" />
 
 
             <StackPanel
-                Width="500"
-                Height="100"
+                Width="1200"
+                Height="300"
                 HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Orientation="Horizontal">
-                <ComboBox
-                    Margin="100,0,0,15"
-                    Background="White"
-                    BorderBrush="Black"
-                    Foreground="Black"
-                    Header="Property Type*"
-                    SelectedItem="{Binding PropertyType, Mode=TwoWay}">
-                    <ComboBoxItem Content="Residential" />
-                    <ComboBoxItem Content="Commercial" />
-                    <ComboBoxItem Content="Agricultural" />
-                </ComboBox>
+                VerticalAlignment="Bottom"
+                Background="#3338A0"
+                Orientation="Vertical">
 
-                <ComboBox
-                    Margin="100,0,0,15"
-                    Background="White"
-                    BorderBrush="Black"
-                    Foreground="Black"
-                    Header="Size*"
-                    SelectedItem="{Binding PropertyType, Mode=TwoWay}">
-                    <ComboBoxItem Content="Residential" />
-                    <ComboBoxItem Content="Commercial" />
-                    <ComboBoxItem Content="Agricultural" />
-                </ComboBox>
 
-                <TextBox
-                    Height="30"
-                    Margin="20,0,0,0"
-                    Background="White"
-                    BorderBrush="Black"
-                    BorderThickness="1" />
+                <TextBlock
+                    Width="350"
+                    Margin="100,30,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="40"
+                    FontStyle="Normal"
+                    Foreground="White"
+                    Text="searching for land" />
+
+
+                <StackPanel
+                    Width="500"
+                    Height="150"
+                    Padding="20"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+
+                    <!--  choose location  -->
+
+                    <ComboBox
+                        Margin="130,0,0,15"
+                        Background="White"
+                        BorderBrush="Black"
+                        Foreground="white"
+                        Header="Location*"
+                        SelectedItem="{Binding PropertyType, Mode=TwoWay}">
+                        <ComboBoxItem Content="Gayaza" />
+                        <ComboBoxItem Content="Mukono" />
+                        <ComboBoxItem Content="Entebbe" />
+                        <ComboBoxItem Content="Masaka" />
+                        <ComboBoxItem Content="Lira" />
+                        <ComboBoxItem Content="Nakasongola" />
+                    </ComboBox>
+
+
+                    <!--  size of land  -->
+                    <ComboBox
+                        Margin="10,0,0,15"
+                        Background="White"
+                        BorderBrush="Black"
+                        Foreground="White"
+                        Header="Size(Acres)*"
+                        SelectedItem="{Binding PropertyType, Mode=TwoWay}">
+                        <ComboBoxItem Content="50 x 100" />
+                        <ComboBoxItem Content="50 x 50" />
+                        <ComboBoxItem Content="100 x 100" />
+                        <ComboBoxItem Content="20 x 50" />
+
+                    </ComboBox>
+
+
+                    <!--  Price Range  -->
+                    <ComboBox
+                        Margin="10,0,0,15"
+                        Background="White"
+                        BorderBrush="Black"
+                        Foreground="white"
+                        Header="Amount*"
+                        SelectedItem="{Binding PropertyType, Mode=TwoWay}" />
+
+                </StackPanel>
 
             </StackPanel>
 
 
-            <Button
+            <!-- <Button
                 Margin="20"
                 HorizontalAlignment="Right"
                 Background="#3338A0"
                 Content="Search"
-                CornerRadius="5" />
+                CornerRadius="5" />-->
+
+            <!--  Placeholder for search results  -->
+            <StackPanel
+                Width="1200"
+                Height="400"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Orientation="Horizontal" />
+
+
 
         </StackPanel>
-
     </Grid>
 </Page>
